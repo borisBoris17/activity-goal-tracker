@@ -94,8 +94,10 @@
 		E601D9552A2AE9F1000B13C3 /* activity-goal-tracker */ = {
 			isa = PBXGroup;
 			children = (
+				E601D9822A2AEC84000B13C3 /* Models */,
+				E601D9812A2AEC37000B13C3 /* ViewModels */,
+				E601D9802A2AEC2D000B13C3 /* Views */,
 				E601D9562A2AE9F1000B13C3 /* activity_goal_trackerApp.swift */,
-				E601D9582A2AE9F1000B13C3 /* ContentView.swift */,
 				E601D95A2A2AE9F2000B13C3 /* Assets.xcassets */,
 				E601D95C2A2AE9F2000B13C3 /* Preview Content */,
 			);
@@ -125,6 +127,28 @@
 				E601D9732A2AE9F2000B13C3 /* activity_goal_trackerUITestsLaunchTests.swift */,
 			);
 			path = "activity-goal-trackerUITests";
+			sourceTree = "<group>";
+		};
+		E601D9802A2AEC2D000B13C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E601D9582A2AE9F1000B13C3 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E601D9812A2AEC37000B13C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E601D9822A2AEC84000B13C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
