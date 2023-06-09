@@ -11,7 +11,7 @@ import SwiftUI
 struct activity_goal_trackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().background(themes[0].backgroundColor)
         }
     }
 }

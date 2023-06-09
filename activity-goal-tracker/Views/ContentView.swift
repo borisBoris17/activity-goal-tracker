@@ -18,64 +18,38 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Text("Goal Tracker")
+                    .font(.custom("Arial", size: 30))
+                    .fontWeight(.bold)
+                
+                // This will be part of a carousel
                 ZStack {
-                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
                         .fill(theme.brandColor)
-                        .frame(width: UIScreen.main.bounds.width - 10, height: 100)
+                        .frame(width: UIScreen.main.bounds.width - 20)
                     VStack {
                         Text("Outdoor Time")
                             .font(theme.headlineFont)
-                            .foregroundColor(theme.bodyTextColor)
-                        HStack {
-                            Text("3 hrs")
-                            Text("/")
-                            Text("1000 hrs")
-                        }
-                        .font(theme.subTitleFont)
+                            .padding()
+                        GoalTrackerView(theme: theme)
+                            .frame(width: UIScreen.main.bounds.width / 2)
+                            .padding(.bottom, -1 * (UIScreen.main.bounds.width / 2) * 2 / 5)
+                        CalendarView(
+                            interval: .init(
+                                start: .now.addingTimeInterval(-24 * 30 * 24 * 3600),
+                                end: .distantFuture
+                            ),
+                            theme: theme
+                        ).frame(width: UIScreen.main.bounds.width - 30)
+                        
+                        RecentActivities(theme: theme)
+                        
                     }
-                }
-                Button {
-                    startActivity()
-                } label: {
-                    Text("START ACTIVITY")
-                        .padding(20)
-//                        .frame(width: UIScreen.main.bounds.width / 2)
-                        .foregroundColor(theme.bodyTextColor)
-                }
-                .background(theme.brandColor)
-                .clipShape(Capsule())
-                HStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(theme.brandColor)
-                                                .frame(width: UIScreen.main.bounds.width - 10)
-                        VStack {
-                            ZStack {
-                                
-                                Text("Active Days")
-                                    .font(theme.buttonFont)
-                                    .padding()
-                            }
-                            CalendarView(
-                                interval: .init(
-                                    start: .now.addingTimeInterval(-24 * 30 * 24 * 3600),
-                                    end: .distantFuture
-                                ),
-                                theme: theme
-                            )
-                        }
-                    }
-                }
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25, style: .continuous)
-                        .fill(theme.brandColor)
-                        .frame(width: UIScreen.main.bounds.width - 10, height: 400)
-                    Text("Section to display recent activities.")
                 }
             }
-            .padding()
+            .background(theme.backgroundColor)
         }
-        .background(theme.backgroundColor)
+        .padding(.top, 1)
     }
 }
 

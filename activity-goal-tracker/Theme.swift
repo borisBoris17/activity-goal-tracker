@@ -24,12 +24,11 @@ enum Fonts{
 
 func getFont(name:Fonts) -> Font{
     switch(name){
-    case .headlineFont: return Font.custom("Arial", size: 30)
-    case .subTitleFont: return Font.custom("Arial", size: 20)
-    case .bodyFont: return Font.custom("Arial", size: 12)
-    case .buttonFont: return Font.custom("Arial", size:16)
-    case .warningFont: return Font.custom("Arial", size: 8)
-    default: return Font.custom("Arial", size: 14)
+        case .headlineFont: return Font.custom("Arial", size: 30)
+        case .subTitleFont: return Font.custom("Arial", size: 20)
+        case .bodyFont: return Font.custom("Arial", size: 12)
+        case .buttonFont: return Font.custom("Arial", size:16)
+        case .warningFont: return Font.custom("Arial", size: 8)
     }
 }
 

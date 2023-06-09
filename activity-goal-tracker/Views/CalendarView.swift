@@ -18,7 +18,7 @@ struct CalendarView: UIViewRepresentable {
         view.delegate = context.coordinator
         view.calendar = gregorianCalendar
         view.layer.cornerCurve = .continuous
-        view.tintColor = UIColor(theme.brandColor)
+        view.tintColor = UIColor(theme.secondaryColor)
         view.availableDateRange = interval
         return view
     }
@@ -39,7 +39,6 @@ struct CalendarView: UIViewRepresentable {
         }
         
         @MainActor func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
-            //        return nil
             return .customView {
                 let emoji = UILabel()
                 emoji.text = "🚀"
